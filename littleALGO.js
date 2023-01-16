@@ -3,6 +3,9 @@ const ctx = canvas.getContext("2d");
 ctx.strokeStyle = "green";
 ctx.lineJoin = "round";
 
+const arrowHead = new Image();
+arrowHead.src = "angle.png";
+
 const alphas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 function startNewPath(numberPoints) {
@@ -21,16 +24,14 @@ function startNewPath(numberPoints) {
     points.push(point);
 
     ctx.beginPath();
-    ctx.arc(point.x, point.y, 3.5, 0, 2 * Math.PI);
+    ctx.arc(point.x, point.y, 2.5, 0, 2 * Math.PI);
     ctx.fill();
 
     if (points.length === numberPoints) {
       canvas.removeEventListener("click", event);
       const start = points[0];
       const path = littleTSP(points, start);
-      console.log(path);
       drawArrowsBetweenPoints(path);
-      // console.log(tour);
     }
   });
 }
@@ -47,6 +48,10 @@ function drawArrowsBetweenPoints(path) {
       ctx.moveTo(currX, currY);
       ctx.lineTo(nextPointX, nextPointY);
       ctx.stroke();
+
+      // let angle = Math.atan2(nextPointX - currX, nextPointY - currY) * (180 / Math.PI);
+      // ctx.rotate(angle);
+      // ctx.drawImage(arrowHead, nextPointX - arrowHead.width / 2, nextPointY - arrowHead.height / 2);
     }
   }
 }
@@ -124,9 +129,12 @@ toggle.addEventListener("click", (e) => {
   }
 });
 
+const startInfo = document.querySelector(".start-info");
 const generateButton = document.querySelector(".generate");
 generateButton.addEventListener("click", (e) => {
   e.preventDefault();
   const numberPoints = document.querySelector(".numberCities").value;
   startNewPath(+numberPoints);
+  startInfo.innerHTML = `Veuillez Selectioner ${numberPoints} ville dans la carte`;
+  startInfo.style.visibility = "visible";
 });

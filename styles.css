@@ -12,20 +12,38 @@ body {
   background-image: url("background.jpg");
   background-size: cover;
   position: relative;
+  min-height: 100vh;
 }
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.05);
   inset: 0;
   padding: 50px;
+  padding-bottom: 100px;
   opacity: 0.9;
+  position: relative;
 }
-
+.git {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 40px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0 0 0 12px;
+  cursor: pointer;
+  display: flex;
+  width: 100px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .container {
   border-radius: 16px;
   max-width: 700px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 15px;
   box-shadow: 0 0 25px 10px rgba(var(--secondary), 0.05), 0 0 5px rgba(var(--secondary), 0.1);
   position: relative;
   background-color: rgb(var(--primary));
@@ -61,9 +79,41 @@ h3 {
   margin-top: 0;
   text-align: center;
   font-style: italic;
+  font-weight: normal;
 }
 
 input,
 button {
   padding: 5px 10px;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border: #aaa solid 1px;
+  color: rgb(var(--secondary));
+}
+
+.generate {
+  background-color: #005f02;
+  color: #fff;
+  border: none;
+  border: 1px solid #005f02;
+  border-radius: 4px;
+}
+
+.reset {
+  background-color: #585858;
+  color: #fff;
+  border: none;
+  border: 1px solid #585858;
+  border-radius: 4px;
+}
+
+.start-info {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #00a303;
+  visibility: hidden;
 }
