@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Traveling Salesman Problem</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="background-light">
+    <div class="overlay">
+      <div class="container background-light">
+        <span class="toggle">
+          <span class="dark" title="Toggle Mode"><i class="fa-solid fa-moon"></i></span>
+          <span class="light" title="Toggle Mode" style="display: none"><i class="fa-solid fa-sun"></i></span>
+        </span>
+        <h1>Problème du voyageur de commerce</h1>
+        <h3>Algorithme de Little</h3>
+
+        <div class="texture">
+          <canvas id="myCanvas" width="500" height="580"></canvas>
+          <form>
+            <input class="numberCities" type="number" min="3" max="15" />
+            <button class="generate">Commencer</button>
+            <button class="reset">Réinitialiser</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="littleALGO.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+      integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
